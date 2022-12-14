@@ -1,6 +1,26 @@
 <?php
-    
-?>
+    // VERIFIER SI IMAGE BIEN RECU
+    if(isset($_FILES['image']) && $_FILES['image']['error']==0){
+        
+        // VARIABLE
+        $error = 1;
+        //  TAILLE
+        if($_FILES['image']['size'] <= 3000000){
+            //EXTENSION
+            $informationsImage = pathinfo($_FILES['image']['name']);
+            $extensionImage = $informationsImage['extension'];
+            $extensionArray = array('jpg','jpeg','png','gif');
+            
+
+            // VERIFICATION DE L'EXTENSION DU TYPE DE FICHIER UPLOAD
+            if(in_array($extensionImage, $extensionArray)){
+                $adress = 'uploads/'.time().rand().rand();
+                move_uploaded_file($_FILES['image']['tmp_name'], $adress .''. $extensionImage);
+                $error = 0;
+            }
+        }
+    }
+    ?>
 <!doctype html>
 <html lang="fr">
 
