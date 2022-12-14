@@ -8,26 +8,24 @@
 </head>
 <body>
    <?php
+   // Declarer une variable en php
+   $age_samuel = 5;
+   $age_eddy = 20;
+   // "echo" permet d'afficher sur la page
+   echo $age_samuel;
+   // Concatener des variables
+   echo $age_samuel . '' . $age_eddy;
+   // ou
+   echo $age_samuel + $age_eddy;
 
-        // Declarer une variable en php
-        $age_samuel = 5;
-        $age_eddy = 20;
-        // "echo" permet d'afficher sur la page 
-        echo $age_samuel;
-        // Concatener des variables 
-        echo $age_samuel  .''.  $age_eddy;
-        // ou 
-        echo $age_samuel + $age_eddy;
+   // TABLEAUX
 
-        // TABLEAUX
+   $identitePersonneA = [
+       'key' => true,
+       'prenom' => 'Samuel',
+   ];
 
-        $identitePersonneA = array(
-            'key' => true,
-            'prenom' => 'Samuel',
-        );
-
-        echo $identitePersonneA['prenom'];
-
+   echo $identitePersonneA['prenom'];
    ?>
 </body>
 </html>
