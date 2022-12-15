@@ -9,7 +9,7 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
         $allowedExtensions = ['jpg', 'jpeg', 'gif', 'png'];
         if (in_array($extension, $allowedExtensions)) {
             // On peut valider le fichier et le stocker définitivement
-            move_uploaded_file($_FILES['screenshot']['tmp_name'], 'uploads/' . basename($_FILES['image']['name']));
+            move_uploaded_file($_FILES['image']['tmp_name'], 'uploads/' . basename($_FILES['image']['name']));
             echo "L'envoi a bien été effectué !";
         }
     }
@@ -45,7 +45,7 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
                 <!-- Ajout champ d'upload ! -->
                 <div class="mb-3 mt-5">
                     <label for="screenshot" class="form-label border border-2 border-dark p-1">Votre image</label>
-                    <input type="file" class="form-control" id="screenshot" name="screenshot" />
+                    <input type="file" class="form-control" id="image" name="image" />
                 </div>
                 <!-- Fin ajout du champ -->
                 <button type="submit" class="btn btn-primary">Envoyer</button>
